@@ -3,28 +3,28 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 
 const styles = StyleSheet.create({
   itemContainer: {
-    height: 100,
+    height: 120,
     width: "100%",
     borderColor: "gray",
     borderWidth: 1,
     flexDirection: "row",
   },
   leftContainer: {
-    width: 100,
+    width: 90,
   },
   rightContainer: {
     flex: 1,
     padding: 10,
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
-  tinyLogo: {
-    width: 100,
-    height: 100,
+  cardImage: {
+    height: 120,
+    width: 90,
   },
   text: {
     fontSize: 16,
   },
-  subText: { fontSize: 12, color: "gray" },
+  subText: { fontSize: 16, color: "#333" },
 });
 
 export const ListItem = ({ imageUrl, name, types, text, onPress }) => {
@@ -33,7 +33,7 @@ export const ListItem = ({ imageUrl, name, types, text, onPress }) => {
       <View style={styles.leftContainer}>
         {!!imageUrl && (
           <Image
-            style={styles.tinyLogo}
+            style={styles.cardImage}
             source={{
               uri: imageUrl,
             }}
@@ -44,7 +44,7 @@ export const ListItem = ({ imageUrl, name, types, text, onPress }) => {
         <Text style={styles.text}>
           {name} / {types}
         </Text>
-        <Text numberOfLines={3} style={styles.text}>
+        <Text numberOfLines={3} style={styles.subText}>
           {text}
         </Text>
       </View>

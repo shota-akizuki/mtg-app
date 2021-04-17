@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    //flexDirectionに指定した垂直方向に要素を並べる（この場合はrow）
   },
   itemContainer: {
     height: 100,
@@ -47,6 +46,7 @@ export const HomeScreen = ({ navigation }) => {
       const response = await axios.get(url);
       setCards(response.data.cards);
       console.log(response);
+      console.log(cards);
     } catch (error) {
       console.log(error);
     }

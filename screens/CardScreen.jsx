@@ -1,14 +1,17 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text } from "react-native";
+import { SafeAreaView, StyleSheet, Image } from "react-native";
 import WebView from "react-native-webview";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    alignItems: "center",
   },
-  cardContainer: {
-    width: "100%",
+  cardImage: {
+    marginTop: 40,
+    height: 500,
+    width: 360,
   },
 });
 
@@ -17,7 +20,12 @@ export const CardScreen = ({ route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <WebView style={styles.cardContainer} source={{ uri: card.imageUrl }} />
+      <Image
+        style={styles.cardImage}
+        source={{
+          uri: card.imageUrl,
+        }}
+      />
     </SafeAreaView>
   );
 };
